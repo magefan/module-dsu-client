@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magefan" translate="label" sortOrder="10">
+            <label>MageFan Extensions</label>
+        </tab>
+        <section id="dsuclient" translate="label" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Development Store Update (Client)</label>
+            <tab>magefan</tab>
+            <resource>Magefan_DSUClient::config_dsuclient</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General</label>
+                <attribute type="expanded">1</attribute>
+                <field id="version" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <frontend_model>Magefan\DSUClient\Block\Adminhtml\System\Config\Form\Info</frontend_model>
+                </field>
+                <field id="live_url" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0">
+                    <label>Live Store URL</label>
+                    <comment><![CDATA[Base URL of your production (LIVE) store. E.g.: https://mystore.com/<br/>
+                    We strongly recommend to define this config option in app/etc/env.php<br/>
+<pre>
+'system' => [
+    'default' => [
+         'dsuclient' => [
+            'general' => [
+                'live_url' => 'https://mystore.com/'
+            ]
+        ]
+    ]
+]
+                    </pre>
+]]></comment>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

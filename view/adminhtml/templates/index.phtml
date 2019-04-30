@@ -1,0 +1,160 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+?>
+<?php
+/**
+ * Form template
+ *
+ * @var $block \Magefan\DSUClient\Block\Adminhtml\Form
+ */
+
+?>
+
+<?php $liveStore = $block->isLiveStore(); ?>
+<?php $liveUrl = $block->getLiveUrl(); ?>
+
+<?php if ($liveUrl) { ?>
+    <?php if (!$liveStore) { ?>
+    <table>
+        <tr>
+            <td width="55%" valign="top">
+                <h2><?= __('Request Access') ?></h2>
+                <form name="send data" action="<?= $block->getRequestAccessUrl() ?>" id="search_theme_form" method="post" >
+                    <input type="hidden" name="form_key" value="<?php echo $block->getFormKey() ?>" />
+                    <fieldset class="admin__fieldset">
+                        <div class="admin__field" >
+                            <div class="admin__field-label">
+                                <label for="dsu_request_name"><span><?= __('Your Name') ?></span></label>
+                            </div>
+                            <div class="admin__field-control">
+                                <input class="admin__control-text" type="text" name="name"  id="dsu_request_name" maxlength="255" required>
+                            </div>
+                        </div>
+                        <div class="admin__field" >
+                            <div class="admin__field-label">
+                                <label for="dsu_request_email"><span><?= __('Your Email') ?></span></label>
+                            </div>
+                            <div class="admin__field-control">
+                                <input class="admin__control-text" type="email" name="email"  id="dsu_request_email" maxlength="255" required>
+                            </div>
+                        </div>
+                        <button title="<?php echo __('Send Request'); ?>" type="submit"
+                                class="action-default scalable add primary block">
+                            <span><?php echo __('Send Request'); ?></span>
+                        </button>
+                    </fieldset>
+                </form>
+            </td>
+            <td width="65%" valign="top">
+                <h2><?= __('Update Store') ?></h2>
+                <form name="search_theme_form" id="search_theme_form" method="post" >
+                    <button title="<?php echo __('Configuration'); ?>" type="button"
+                            class="action-default scalable add primary block"
+                            onclick="setLocation('<?php echo $block->escapeHtml($block->getConfigUrl()); ?>')">
+                        <span><?php echo __('Configuration'); ?></span>
+                    </button>
+                    <div class="configuration">
+                        <div class="block">
+                            <label for="dsu-live-url"><?php echo __('Live Store URL: '); ?></label>
+                            <a href="<?php echo $block->escapeHtml($liveUrl); ?>"><?php echo $block->escapeHtml($liveUrl); ?></a>
+                        </div>
+                        <fieldset class="admin__fieldset">
+                             <div class="admin__field">
+                               <div class="admin__field-label">
+                                     <label for="email"><span><?php echo __('Your Email'); ?></span></label>
+                               </div>
+                                  <div class="admin__field-control">
+                                     <input class="admin__control-text" type="text" name="email" id="email" value="">
+                                  </div>
+                             </div>
+                             <div class="admin__field">
+                                <div class="admin__field-label">
+                                      <label for="secret"><span><?php echo __('Secret'); ?></span></label>
+                                </div>
+                                    <div class="admin__field-control">
+                                       <input class="admin__control-text" type="password" name="secret" id="secret" value="">
+                                    </div>
+                             </div>
+                        </fieldset>
+                        <input type="hidden" name="form_key" value="<?php echo $block->getFormKey() ?>" />
+
+                        <button title="<?php echo __('Update pub/media'); ?>" type="button"
+                                class="action-default scalable add primary block"
+                                onclick="submitForm('media')">
+                            <span><?php echo __('Update pub/media'); ?></span>
+                        </button>
+
+                        <button title="<?php echo __('Update Stores Configuration'); ?>" type="button"
+                                class="action-default scalable add primary block"
+                                onclick="submitForm('configuration')">
+                            <span><?php echo __('Update Stores Configuration'); ?></span>
+                        </button>
+
+                        <button title="<?php echo __('Update CMS data'); ?>" type="button"
+                                class="action-default scalable add primary block"
+                                onclick="submitForm('cms')">
+                            <span><?php echo __('Update CMS data'); ?></span>
+                        </button>
+
+                        <button title="<?php echo __('Update Magefan Blog'); ?>" type="button"
+                                class="action-default scalable add primary block"
+                                onclick="submitForm('blog')">
+                            <span><?php echo __('Update Magefan Blog'); ?></span>
+                        </button>
+
+                        <button title="<?php echo __('Update Database'); ?>" type="button"
+                                class="action-default scalable add primary block"
+                                onclick="submitForm('database')">
+                            <span><?php echo __('Update Database'); ?></span>
+                        </button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+    Created by <a href="https://magefan.com" target="_blank">Magefan</a>.
+    <?php } else { ?>
+        <h2><?php echo __('This is a live store. You cannot perform the update on the live store.'); ?></h2>
+    <?php } ?>
+<?php } else { ?>
+    <h2><?php echo __('Live Store URL is empty. Please specify it first in the <a href="%1">Store Configuration</a>.', $block->getConfigUrl()); ?></h2>
+<?php } ?>
+
+<style>
+    .block, .primary.block {
+        display: block;
+        line-height: 1.6em;
+        padding: 10px;
+        margin: 15px;
+    }
+
+    button.primary.block {
+        width: 400px;
+    }
+
+    .configuration input {
+        margin-left: 5px;
+    }
+
+</style>
+
+
+
+<script type="text/javascript">
+
+    function submitForm(type)
+    {
+        var form = document.search_theme_form;
+        form.action = '<?php echo $block->escapeHtml($block->getUpdateUrl('update')); ?>';
+
+        var tableInp = document.createElement('input');
+        tableInp.setAttribute('name', 'type');
+        tableInp.setAttribute('type', 'hidden');
+        tableInp.setAttribute('value', type);
+        form.appendChild(tableInp);
+        form.submit();
+    }
+</script>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+     <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="dsuDatabase" xsi:type="object">Magefan\DSUClient\Console\UpdateDatabase</item>
+                <item name="dsuBlog" xsi:type="object">Magefan\DSUClient\Console\UpdateBlog</item>
+                <item name="dsuCms" xsi:type="object">Magefan\DSUClient\Console\UpdateCms</item>
+                <item name="dsuConfig" xsi:type="object">Magefan\DSUClient\Console\UpdateConfig</item>
+                <item name="dsuMedia" xsi:type="object">Magefan\DSUClient\Console\UpdateMedia</item>
+                <item name="dsuRequest" xsi:type="object">Magefan\DSUClient\Console\Request</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Magefan\DSUClient\Console\UpdateConfig"
+                 type="Magefan\DSUClient\Console\UpdateCommand">
+        <arguments>
+            <argument name="type" xsi:type="string">configuration</argument>
+            <argument name="name" xsi:type="string">dsu:update:config</argument>
+            <argument name="description" xsi:type="string">Update Config</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\DSUClient\Console\UpdateBlog"
+                 type="Magefan\DSUClient\Console\UpdateCommand">
+        <arguments>
+            <argument name="type" xsi:type="string">blog</argument>
+            <argument name="name" xsi:type="string">dsu:update:blog</argument>
+            <argument name="description" xsi:type="string">Update Blog</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\DSUClient\Console\UpdateCms"
+                 type="Magefan\DSUClient\Console\UpdateCommand">
+        <arguments>
+            <argument name="type" xsi:type="string">cms</argument>
+            <argument name="name" xsi:type="string">dsu:update:cms</argument>
+            <argument name="description" xsi:type="string">Update Cms</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\DSUClient\Console\UpdateDatabase"
+                 type="Magefan\DSUClient\Console\UpdateCommand">
+        <arguments>
+            <argument name="type" xsi:type="string">database</argument>
+            <argument name="name" xsi:type="string">dsu:update:db</argument>
+            <argument name="description" xsi:type="string">Update Database</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\DSUClient\Console\UpdateMedia"
+                 type="Magefan\DSUClient\Console\UpdateCommand">
+        <arguments>
+            <argument name="type" xsi:type="string">media</argument>
+            <argument name="name" xsi:type="string">dsu:update:media</argument>
+            <argument name="description" xsi:type="string">Update Media</argument>
+        </arguments>
+    </virtualType>
+</config>

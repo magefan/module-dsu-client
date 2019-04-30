@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="Magefan_DSUClient::development_store_update" title="Development Store Update (Client)"
+                              sortOrder="10" />
+                    <resource id="Magefan_DSUClient::media" title="Media" sortOrder="15" />
+                    <resource id="Magefan_DSUClient::configuration" title="Configuration" sortOrder="20" />
+                    <resource id="Magefan_DSUClient::cms" title="CMS" sortOrder="25" />
+                    <resource id="Magefan_DSUClient::blog" title="Blog" sortOrder="30" />
+                    <resource id="Magefan_DSUClient::database" title="Database" sortOrder="40" />
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Magefan_DSU::config_dsuclient" title="Development Store Update (Client)" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

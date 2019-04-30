@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magefan_DSUClient::development_store_update"
+             title="Development Store Update (Client)"
+             module="Magefan_DSUClient"
+             sortOrder="30"
+             action="magefan/dsuclient"
+             resource="Magefan_DSUClient::development_store_update"
+             parent="Magento_Backend::system_tools"/>
+    </menu>
+</config>
