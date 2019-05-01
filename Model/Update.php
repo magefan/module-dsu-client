@@ -139,6 +139,7 @@ class Update
 
         $zendClient = $this->zendClientFactory->create();
         $zendClient->setRequest($zendRequest);
+        $zendClient->setOptions(['timeout' => 3600]);
         $zendClient->setRawBody(json_encode($data));
         $zendClient->setUri($liveUrl . $uri);
         $zendClient->setHeaders(['Content-type' => 'application/json']);
