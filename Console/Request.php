@@ -73,7 +73,7 @@ class Request extends Command
             $input->getArgument('your_name'),
             $input->getArgument('your_email')
         );
-
-        $output->writeln(__('Request has been sent successfully. Please wait until moderator approve it.'));
+        $message = __('Request has been sent successfully. Please wait until moderator approve it.');
+        $output->writeln((string)$message);
     }
 }
