@@ -2,10 +2,10 @@
   "name": "magefan/module-dsu-client",
   "description": "Magefan - Development Store Update (Client) v2.1.0",
   "require": {
-    "magefan/module-community" : ">=2.0.4"
+    "magefan/module-community" : ">=2.0.5"
   },
   "type": "magento2-module",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "autoload": {
     "files": [
       "registration.php"
