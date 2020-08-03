@@ -7,7 +7,7 @@ Client Side for [Magento 2 Development Store Update by Magefan](https://github.c
 This [Magento 2 module](https://magefan.com/magento2-extensions) allows you to easily update dev/stage database and media folder
 
 ## Requirements
-  * Magento Community Edition 2.1.0-2.3.x or Magento Enterprise Edition 2.1.0-2.3.x
+  * Magento Community Edition 2.1.0-2.4.0 or Magento Enterprise Edition 2.1.0-2.4.0
   * **IMPORTANT!** [Magefan Community Extension](https://github.com/magefan/module-community) >= 2.0.4 . Please install this extension first if you use installation via FTP.
         
 ## Features
