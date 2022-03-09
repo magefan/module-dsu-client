@@ -4,6 +4,8 @@ Client Side for [Magento 2 Development Store Update by Magefan](https://github.c
 [![Total Downloads](https://poser.pugx.org/magefan/module-dsu/downloads)](https://packagist.org/packages/magefan/module-dsu)
 [![Latest Stable Version](https://poser.pugx.org/magefan/module-dsu/v/stable)](https://packagist.org/packages/magefan/module-dsu)
 
+<img width="150" height="100" src="https://magefan.com/media/wysiwyg/made_in_ukraine.jpg">
+
 This [Magento 2 module](https://magefan.com/magento2-extensions) allows you to easily update dev/stage database and media folder
 
 ## Requirements
