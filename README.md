@@ -1,4 +1,4 @@
-# Magento 2 Development Store Update by [Magefan](https://magefan.com/magento2-extensions)
+# Magento 2 Development Store Update by [Magefan](https://magefan.com)
 Client Side for [Magento 2 Development Store Update by Magefan](https://github.com/magefan/module-dsu)
 
 [![Total Downloads](https://poser.pugx.org/magefan/module-dsu/downloads)](https://packagist.org/packages/magefan/module-dsu)
@@ -8,7 +8,7 @@ Client Side for [Magento 2 Development Store Update by Magefan](https://github.c
 
 <img width="150" height="100" src="https://magefan.com/media/wysiwyg/made_in_ukraine.jpg">
 
-This [Magento 2 module](https://magefan.com/magento2-extensions) allows you to easily update dev/stage database and media folder
+This [Magento 2 module](https://magefan.com/magento-2-extensions) allows you to easily update dev/stage database and media folder
 
 ## Requirements
   * Magento Community Edition 2.1.0-2.4.x or Magento Enterprise Edition 2.1.0-2.4.x
